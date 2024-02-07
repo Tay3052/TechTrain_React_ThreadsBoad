@@ -1,9 +1,9 @@
-import { CreateThreadById } from '../APIs/api';
-import { useState } from 'react';
-import { useParams } from 'react-router';
+import { CreateThreadById } from "../APIs/api";
+import { useState } from "react";
+import { useParams } from "react-router";
 
 const PostComment = () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const { id } = useParams<{ id: string }>();
 
   const handleCreateFunction = async (value: string) => {
@@ -12,6 +12,7 @@ const PostComment = () => {
         return;
       }
       const response = await CreateThreadById(id, value);
+
       console.log(response);
     } catch (error) {
       console.log(error);
@@ -21,7 +22,7 @@ const PostComment = () => {
   return (
     <>
       <div>
-        <form className='commentform'>
+        <form className="commentform">
           <p>コメントを書いてください</p>
           <textarea value={value} onChange={(e) => setValue(e.target.value)} />
           <br />

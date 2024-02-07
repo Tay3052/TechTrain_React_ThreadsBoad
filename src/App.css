@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 
   background-color: silver;
   color: #000;
@@ -36,6 +36,14 @@ body {
 
 .commentform {
   margin-left: 30px;
+}
+
+.commentflex {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
 /* #root {

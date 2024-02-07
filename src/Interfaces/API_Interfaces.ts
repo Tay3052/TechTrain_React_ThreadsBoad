@@ -10,10 +10,12 @@ interface postThreadInterface {
 
 interface getThreadInterface {
   threadId: string;
-  posts: {
-    id: string;
-    post: string;
-  };
+  posts: [
+    {
+      id: string;
+      post: string;
+    }
+  ];
 }
 
 interface postPostInterface {
