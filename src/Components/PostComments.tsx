@@ -12,7 +12,6 @@ const PostComment = () => {
         return;
       }
       const response = await CreateThreadById(id, value);
-
       console.log(response);
     } catch (error) {
       console.log(error);
@@ -21,17 +20,17 @@ const PostComment = () => {
 
   return (
     <>
-      <div>
-        <form className="commentform">
-          <p>コメントを書いてください</p>
+      <div className="commentform">
+        <p>コメントを書いてください</p>
+        {/* formにするとsubmitの扱いになる */}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleCreateFunction(value);
+          }}>
           <textarea value={value} onChange={(e) => setValue(e.target.value)} />
           <br />
-          <button
-            onClick={() => {
-              handleCreateFunction(value);
-            }}>
-            送信
-          </button>
+          <button>送信</button>
         </form>
       </div>
     </>
